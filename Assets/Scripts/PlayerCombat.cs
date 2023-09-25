@@ -9,10 +9,11 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     public float attackRange = .5f;
-    public int attackDamage = 20;
-    
+    public float attackDamage = 20f;
+
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+
     // Update is called once per frame
     void Update()
     {

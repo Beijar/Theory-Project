@@ -9,10 +9,11 @@ public class Player : BaseCharacter
 
     float horizontalMove = 0f;
     float runSpeed = 20f;
+
     bool jump = false;
     bool crouch = false;
 
-    public Player(): base(100, "Hero") { }
+
     // Update is called once per frame
     void Update()
     {

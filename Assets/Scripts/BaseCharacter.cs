@@ -2,27 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BaseCharacter : MonoBehaviour
 {
     public Animator animator;
-    public string characterName;
-    public int maxHealth { get; set; }
-    int currentHealth;
+    [SerializeField] FloatingHealthBar healthBar;
+    [SerializeField] string characterName;
+    [SerializeField] float maxHealth = 100f;
+    [SerializeField] float currentHealth;
 
-    public BaseCharacter(int health, string name)
+
+    private void Awake()
     {
-        maxHealth = health;
-        characterName = name;
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
 
     void Start()
     {
         currentHealth = maxHealth;
+        Debug.Log(currentHealth);
+        if (healthBar)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        if (healthBar)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        }
 
         animator.SetTrigger("Hurt");
 
