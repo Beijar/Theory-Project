@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : BaseCharacter
 {
     public CharacterController2D Controller;
-    public Animator animator;
-    public float runSpeed = 40f;
 
     float horizontalMove = 0f;
+    float runSpeed = 20f;
     bool jump = false;
     bool crouch = false;
+
+    public Player(): base(100, "Hero") { }
     // Update is called once per frame
     void Update()
     {
@@ -48,5 +50,12 @@ public class Player : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("Crouch", isCrouching);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        //TODO: Replace this with a game over screen and a option to load Start screen.
+        SceneManager.LoadScene(0);
     }
 }

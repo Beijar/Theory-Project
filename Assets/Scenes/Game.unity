@@ -1232,7 +1232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 957218961}
-  MaxHealth: 100
+  health: 100
+  speed: 20
 --- !u!1 &1010352278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,9 +1455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831b2078f45f2b34a89d70ec3dfae2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller: {fileID: 1010352285}
   animator: {fileID: 1010352287}
-  runSpeed: 25
+  Controller: {fileID: 1010352285}
 --- !u!95 &1010352287
 Animator:
   serializedVersion: 5
