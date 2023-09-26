@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 390578234}
   - component: {fileID: 390578233}
   m_Layer: 5
-  m_Name: Healthbar
+  m_Name: FloatingHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 390578234}
   mainCamera: {fileID: 2092231832}
-  target: {fileID: 957218963}
 --- !u!114 &390578234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +592,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.152
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1532,9 +1531,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1010352287}
   healthBar: {fileID: 0}
-  characterName: Hero
-  maxHealth: 100
-  currentHealth: 0
+  m_characterName: 
+  m_maxHealth: 0
   Controller: {fileID: 1010352285}
 --- !u!95 &1010352287
 Animator:
@@ -2741,7 +2739,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2092231832}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

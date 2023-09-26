@@ -13,6 +13,12 @@ public class Player : BaseCharacter
     bool jump = false;
     bool crouch = false;
 
+    private void Awake()
+    {
+        //INHERITANCE
+        maxHealth = 100;
+        characterName = "Hero";
+    }
 
     // Update is called once per frame
     void Update()
@@ -41,6 +47,11 @@ public class Player : BaseCharacter
     {
         Controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
+
+        if (Mathf.Abs(horizontalMove) == 0)
+        {
+            FindObjectOfType<GameManager>().AudioPlayer("Run");
+        }
     }
 
     public void OnLanding()
@@ -55,6 +66,7 @@ public class Player : BaseCharacter
 
     public override void Die()
     {
+        // POLYMORPHISM
         base.Die();
         //TODO: Replace this with a game over screen and a option to load Start screen.
         SceneManager.LoadScene(0);
