@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class Player : BaseCharacter
 {
@@ -62,13 +62,5 @@ public class Player : BaseCharacter
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("Crouch", isCrouching);
-    }
-
-    public override void Die()
-    {
-        // POLYMORPHISM
-        base.Die();
-        //TODO: Replace this with a game over screen and a option to load Start screen.
-        SceneManager.LoadScene(0);
     }
 }
